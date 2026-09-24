@@ -1,0 +1,456 @@
+<!--
+  ============================================================
+  ETIMU JOTHAM — PORTFOLIO
+  ============================================================
+  HOW TO EDIT THIS FILE
+
+  - Text: just type over the words inside the tags, e.g.
+    <h1>ETIMU JOTHAM</h1> — change the words, keep the tags.
+
+  - Images: every image uses  <img src="assets/images/FILE.jpg">
+    Put your file in the assets/images folder and change FILE.jpg
+    to match your filename. Always keep the alt="..." text —
+    it describes the image for search engines and screen readers.
+
+  - Video: every video uses  <video src="assets/video/FILE.mp4">
+    Put your file in the assets/video folder and change FILE.mp4.
+
+  - Each project card is one <article class="work-card"> block.
+    Copy a whole block to add a new project, or delete one to
+    remove a project. Keep data-index numbers in order (0, 1, 2...).
+
+  - Styling lives in styles.css. Fonts and colours are controlled
+    from one place near the top of that file (search "EASY CONTROLS").
+  ============================================================
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ============================================================
+       SITE INFO — edit this block first.
+       This controls the browser tab title, Google search preview,
+       and how the page looks when shared on social media.
+       ============================================================ -->
+  <title>Etimu Jotham — Artist & 3D Generalist</title>
+  <meta name="description" content="Etimu Jotham is an artist and 3D generalist based in Kampala, Uganda, working across drawing, painting, 3D modelling, animation, motion graphics and visual design.">
+  <meta name="author" content="Etimu Jotham">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- Replace YOUR-DOMAIN.example everywhere in this file with your
+       real domain or your github.io address once you know it. -->
+  <link rel="canonical" href="https://YOUR-DOMAIN.example/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Etimu Jotham — Artist & 3D Generalist">
+  <meta property="og:description" content="Visual work across traditional art, 3D, motion and design. Based in Kampala, Uganda.">
+  <meta property="og:url" content="https://YOUR-DOMAIN.example/">
+  <meta property="og:image" content="https://YOUR-DOMAIN.example/assets/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured data: helps Google understand who you are and show
+       a richer search result (name, job title, social links). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Etimu Jotham",
+    "alternateName": "Binji",
+    "jobTitle": "Artist and 3D Generalist",
+    "url": "https://YOUR-DOMAIN.example/",
+    "address": { "@type": "PostalAddress", "addressLocality": "Kampala", "addressCountry": "UG" },
+    "sameAs": [
+      "https://www.instagram.com/jotham_etimu/",
+      "https://www.youtube.com/@JothamEtimu",
+      "https://x.com/JothamEtimu",
+      "https://www.tiktok.com/@etimujotham"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Etimu Jotham home">ETIMU JOTHAM</a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#services">SERVICES</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">MENU</button>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#services">SERVICES</a><a href="#contact">CONTACT</a>
+  </nav>
+
+  <main id="top">
+
+    <!-- ============================================================
+         HERO — first thing visitors see
+         ============================================================ -->
+    <section class="hero section-pad" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">ARTIST / 3D GENERALIST</p>
+        <h1 id="hero-title"><span>ETIMU</span><span>JOTHAM</span></h1>
+        <p class="hero-statement">I explore visual ideas across different mediums — from traditional art to digital 3D, motion and beyond.</p>
+        <div class="hero-meta"><span>KAMPALA, UGANDA</span><a href="#work">
+         <span class="hero-meta-text">
+         <span class="hero-meta-label">EXPLORE WORK</span>
+         <small></small>
+         <svg width="48" height="48" viewBox="0 0 105 118" fill="#E0E0E0" xmlns="http://www.w3.org/2000/svg" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round"><path d="M102.89 46.2799L62.9202 115.22L43.5303 104.17L22.9502 92.4299L31.6702 77.3999L32.2803 76.35L36.2603 78.62L52.8602 88.08L56.2603 90.0199V19.6899L69.5802 12V82.33L93.5602 40.96L102.89 46.2799Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M56.2598 19.6899V90.0199L52.8597 88.08L36.2598 78.62V9.68994L49.5797 16.35L56.2598 19.6899Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M32.2803 76.3501L31.6702 77.4L22.9502 92.4301L2.9502 8２．４３０１Ｌ１２．２８０３ ６６．３５０１Ｌ３２．２８０３ ７６．３５０１Ｚ" stroke="#０Ｂ０Ｂ０Ｆ" stroke-linejoin="round"/><path d="M６９．５７９７ １２Ｌ５６．２５９８ １９．６８９９Ｌ４９．５７９７ １６．３５Ｌ３６．２５９８ ９．６８９９４Ｌ４９．５７９７ ２Ｌ６９．５７９７ １２Ｚ" stroke="#０Ｂ０Ｂ０Ｆ" stroke-linejoin="round"/><path d="M９３．５６０１ ４０．９６Ｌ６９．５８０１ ８２．３３Ｖ３７．８３Ｌ７３．５６０１ ３０．９６Ｌ９３．５６０１ ４０．９６Ｚ" stroke="#０Ｂ０Ｂ０Ｆ" stroke-linejoin="round"/><path d="M６２．９２₀₂ １１５．２２Ｌ４２．９₂₀₂ １０５．２２Ｌ２．９５₀₂ ８２．４₂₉₉Ｌ２２．９₅₀₂ ９₂．₄₂₉₉Ｌ４₃．₅₃₀₃ ₁₀₄．₁₇Ｌ６₂．玖₂₀₂ ₁₁₅．₂₂Ｚ" stroke="#₀B₀B₀F" stroke-linejoin="round"/></svg>
+         </span>
+        </span></a></div>
+        <button class="hero-visual-link" type="button" data-jump-to="CHAAPA LEAGUE TROPHY" aria-label="View chaapa league trophy project details"></button>
+      </div>
+
+      <!--
+        HERO VISUAL — right-side box.
+        Right now it shows an animated placeholder (no file needed).
+        TO USE YOUR OWN IMAGE OR VIDEO:
+          1. Add  has-media  to the class list below.
+          2. Uncomment -->
+
+      <div class="hero-visual" aria-label="Featured work">        
+
+        <img src="assets\images\chaapa-trophy\chaapa-render-001.webp" alt="Featured 3D render by Etimu Jotham">
+        <!-- <video src="assets/video/hero-3d.mp4" autoplay muted loop playsinline></video> -->
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WORK — project grid with filter buttons
+         ============================================================ -->
+    <section id="work" class="work section-pad" aria-labelledby="work-title">
+      <div class="section-heading">
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2 id="work-title">ONE PRACTICE,<br><em>DIFFERENT MEDIUMS.</em></h2>
+      </div>
+
+      <!-- Filter buttons. The number in each <span> is just a label —
+           update it if you add/remove projects in a category. -->
+      <div class="filter-wrap">
+        <div class="filter-row" role="group" aria-label="Filter portfolio work">
+          <button class="filter is-active" type="button" data-filter="all">ALL</button>
+          <button class="filter" type="button" data-filter="3d">3D</button>
+          <button class="filter" type="button" data-filter="art">ART</button>
+          <button class="filter" type="button" data-filter="motion">MOTION</button>
+          <button class="filter" type="button" data-filter="archviz">ARCHVIZ</button>
+          <button class="filter" type="button" data-filter="experimental">EXPERIMENTAL</button>
+        </div>
+      </div>
+
+      <!--
+        PROJECT CARDS
+        Each <article class="work-card"> is one project.
+
+        To add your own image:
+          Change the src="assets/images/PLACEHOLDER.jpg" to your file.
+        To use a video instead of an image:
+          Delete the <img> line and use a <video> line instead
+          (an example is commented out on the first card below).
+
+        data-index    must count up in order: 0, 1, 2, 3...
+        data-category must be one of: 3d, art, motion, design, experimental
+                       (this is what the filter buttons match against)
+        data-title    project name shown in the popup
+        data-type     short tag shown in the popup (e.g. "3D / Blender")
+        data-year     year shown in the popup
+      -->
+      <div class="work-grid" id="work-grid">
+
+<article class="work-card work-wide reveal" data-index="0" data-category="3d" 
+data-title="CHAAPA LEAGUE TROPHY" data-type="3D \ Blender" data-year="2025"
+data-gallery="
+assets\images\chaapa-trophy\chaapa-render-001.webp,
+assets\images\chaapa-trophy\chaapa-render-001.webp,
+"> <!--GALLERY IMAGES FOR POPUP-->
+          <button class="card-button" type="button" aria-label="Open Chaapa League Trophy project" 
+          aria-label="Open Chaapa League Trophy project">
+            <div class="media-box">
+              <img src="assets\images\chaapa-trophy\chaapa-render-001.webp" alt="chaapa — 3D render">
+              <!-- <video src="assets/video/placeholder-environment.mp4" muted loop autoplay playsinline></video> -->
+            </div>
+            <div class="work-info"><h3>CHAAPA LEAGUE TROPHY</h3><p>3D \ Modelling \ Lighting \ Rendering</p><span>2025</span></div>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-index="1" data-category="art" 
+        data-title="PORTRAIT DRAWING" data-type="Drawing \ Charcoal" data-year="2024"
+        data-gallery="
+        assets\images\drawing\drawing-001.webp,
+        assets\images\drawing\drawing-002.webp,
+        assets\images\drawing\drawing-003.webp,
+        assets\images\drawing\drawing-004.webp,
+        assets\images\drawing\drawing-005.webp,
+        assets\images\drawing\drawing-006.webp,
+        assets\images\drawing\drawing-007.webp,
+        "> <!--GALLERY IMAGES FOR POPUP-->
+          <button class="card-button" type="button" aria-label="Open Portrait Drawing project">
+            <div class="media-box">
+              <img src="assets\images\drawing\drawing-001.webp" alt="Portrait Drawing — charcoal drawing">
+            </div>
+            <div class="work-info"><h3>POTRAIT DRAWING</h3><p>Charcoal</p><span>2024</span></div>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-index="2" data-category="motion" 
+        data-title="MOTION TEST" data-type="Motion Graphics \ Blender" data-year="2026"
+        data-gallery="
+        assets\images\drawing\drawing-001.webp,
+        assets\images\drawing\drawing-005.webp
+        "> <!--GALLERY IMAGES FOR POPUP-->
+          <button class="card-button" type="button" aria-label="Open Motion Test project">
+            <div class="media-box">
+              <!-- No video added yet, so this shows a placeholder image.
+                   Once you have a clip, delete the <img> line below and
+                   uncomment the <video> line, pointing it at your file. -->
+              <img src="assets/images/placeholder-motion.jpg" alt="Motion Test — motion graphics">
+              <!-- <video src="assets/video/motion-01.mp4" muted loop autoplay playsinline></video> -->
+              <i class="media-arrow" aria-hidden="true">↗</i>
+            </div>
+            <div class="work-info"><h3>Motion Test</h3><p>Animation \ Motion Graphics</p><span>2026</span></div>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-index="3" data-category="art" 
+        data-title="PAINTINGS" data-type="Acrylic / Watercolor / Vinyl" data-year="2024"
+        data-gallery="
+        assets\images\painting\painting-001.webp,
+        assets\images\painting\painting-002.webp,
+        assets\images\painting\painting-003.webp,
+        assets\images\painting\painting-004.webp,
+        assets\images\painting\painting-005.webp,
+        assets\images\painting\painting-006.webp
+        "> <!--GALLERY IMAGES FOR POPUP-->
+          <button class="card-button" type="button" aria-label="Open Paintings project">
+            <div class="media-box">
+              <img src="assets\images\painting\painting-001.webp" alt="Paintings — acrylic painting">
+            </div>
+            <div class="work-info"><h3>PAINTINGS</h3><p>Painting \ Acrylic</p><span>2024</span></div>
+          </button>
+        </article>
+
+        <article class="work-card work-tall reveal" data-index="4" data-category="3d" 
+        data-title="OBJECT SERIES" data-type="3D / Blender" data-year="2026"
+        data-gallery="
+        assets\images\drawing\drawing-001.webp,
+        assets\images\drawing\drawing-005.webp
+        "> <!--GALLERY IMAGES FOR POPUP-->
+          <button class="card-button" type="button" aria-label="Open Object Series project">
+            <div class="media-box">
+              <img src="assets/images/placeholder-object.jpg" alt="Object Series — 3D render">
+              <i class="media-arrow" aria-hidden="true">↗</i>
+            </div>
+            <div class="work-info"><h3>OBJECT SERIES</h3><p>Modelling \ Materials \ Rendering</p><span>2026</span></div>
+          </button>
+        </article>
+
+        <article class="work-card work-wide reveal" data-index="5" data-category="archviz" 
+        data-title="HEALTH CENTER" data-type="Architectural Visualization \ Blender" data-year="2025"
+        data-gallery="
+        assets\images\drawing\drawing-001.webp,
+        assets\images\drawing\drawing-005.webp
+        "> <!--GALLERY IMAGES FOR POPUP-->
+          <button class="card-button" type="button" aria-label="Open Health Center project">
+            <div class="media-box">
+              <img src="assets/images/placeholder-identity.jpg" alt="Health Center — architectural visualization">
+              <i class="media-arrow" aria-hidden="true">↗</i>
+            </div>
+            <div class="work-info"><h3>HEALTH CENTER</h3><p>Architectural Visualization \ Blender</p><span>2025</span></div>
+          </button>
+        </article>
+
+                <article class="work-card reveal" data-index="6" data-category="archviz" 
+        data-title="KARAMOJA DAM" data-type="Architectural Visualization \ Blender" data-year="2026"
+        data-gallery="
+        assets\images\painting\painting-001.webp,
+        assets\images\painting\painting-002.webp,
+        assets\images\painting\painting-003.webp,
+        assets\images\painting\painting-004.webp,
+        assets\images\painting\painting-005.webp,
+        assets\images\painting\painting-006.webp
+        "> <!--GALLERY IMAGES FOR POPUP-->
+          <button class="card-button" type="button" aria-label="Open KARAMOJA DAM project">
+            <div class="media-box">
+              <img src="assets\images\painting\painting-001.webp" alt="KARAMOJA DAM — architectural visualization">
+            </div>
+            <div class="work-info"><h3>KARAMOJA DAM</h3><p>Architectural Visualization \ Blender</p><span>2026</span></div>
+          </button>
+        </article>
+
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STATEMENT — big centered line
+         ============================================================ -->
+    <section class="statement section-pad" aria-label="Creative statement">
+      <p class="eyebrow">THE PRACTICE</p>
+      <p class="big-statement">Different mediums, same curiosity. <span>Drawing, painting, 3D, animation and design are ways of testing an idea.</span></p>
+    </section>
+
+    <!-- ============================================================
+         3D FEATURE — dark section, put a reel or hero render here
+         ============================================================ -->
+    <section class="three-d feature-dark section-pad" aria-labelledby="three-d-title">
+      <div>
+        <p class="eyebrow">01 / DIGITAL</p>
+        <h2 id="three-d-title">3D<br><em>GENERALIST</em></h2>
+      </div>
+      <div class="feature-copy">
+        <p>Modelling, rendering, lighting, animation and motion graphics — built primarily in Blender and finished across Adobe tools.</p>
+        <div class="tool-list"><span>BLENDER</span><span>AFTER EFFECTS</span><span>PHOTOSHOP</span><span>ILLUSTRATOR</span></div>
+      </div>
+
+      <!-- Add "has-media" to the class list, then uncomment the
+           image or video line below, to replace this placeholder. -->
+      <div class="feature-visual">
+        <!-- <img src="assets/images/reel-cover.jpg" alt="3D reel cover"> -->
+        <!-- <video src="assets/video/reel.mp4" muted loop autoplay playsinline></video> -->
+        <span>DROP IN A REEL / TURN TABLE / HERO RENDER</span>
+        <div class="scanline" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ART FEATURE — 3-image gallery
+         ============================================================ -->
+    <section class="art-feature section-pad" aria-labelledby="art-title">
+      <div class="art-copy">
+        <p class="eyebrow">02 / TRADITIONAL</p>
+        <h2 id="art-title">ART<br><em>&amp; STUDIES</em></h2>
+        <p>Portraits, murals, charcoal and acrylic work. A growing body of traditional work that explores the same visual instincts through physical materials.</p>
+      </div>
+      <div class="art-gallery">
+        <div class="gallery-item large">
+          <img src="assets/images/placeholder-painting.jpg" alt="Painting study">
+          <span class="media-tag">PAINTING</span>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/placeholder-charcoal-2.jpg" alt="Charcoal study">
+          <span class="media-tag">CHARCOAL</span>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/placeholder-mural.jpg" alt="Mural work">
+          <span class="media-tag">MURAL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+         ============================================================ -->
+    <section id="about" class="about section-pad" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">ABOUT</p>
+        <img src="assets/images/placeholder-about.jpg" alt="Portrait of Etimu Jotham">
+        <h2 id="about-title">AN ARTIST<br>EXPLORING.</h2>
+      </div>
+      <div class="about-copy">
+        <p>Etimu Jotham is an artist and 3D generalist based in Kampala, Uganda. His work moves between traditional art, digital 3D, motion and visual design.</p>
+        <p>The portfolio is intentionally open-ended: a place for finished work, school projects, experiments and the ideas that connect them.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES
+         ============================================================ -->
+    <section id="services" class="services section-pad" aria-labelledby="services-title">
+      <div>
+        <p class="eyebrow">FOR CLIENTS / AGENCIES</p>
+        <h2 id="services-title">LET'S<br><em>MAKE SOMETHING.</em></h2>
+      </div>
+      <div class="services-grid">
+        <div><h3>3D</h3><p>MODELLING<br>ANIMATION<br>MOTION GRAPHICS<br>VFX</p></div>
+        <div><h3>VISUAL ART</h3><p>POTRAITS<br>ILLUSTRATION<br>MURALS<br>PAINTING</p></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT — change the email address and social links here
+         ============================================================ -->
+    <section id="contact" class="contact section-pad" aria-labelledby="contact-title">
+      <p class="eyebrow">CONTACT</p>
+      <h2 id="contact-title">HAVE A PROJECT<br><em>IN MIND?</em></h2>
+      <a class="email-link" href="mailto:hello@YOUR-DOMAIN.example">hello@YOUR-DOMAIN.example <span aria-hidden="true">↗</span></a>
+      <div class="socials">
+        <a href="https://www.instagram.com/jotham_etimu/" rel="me noopener" target="_blank">INSTAGRAM</a>
+        <a href="https://www.youtube.com/@JothamEtimu" rel="me noopener" target="_blank">YOUTUBE</a>
+        <a href="https://x.com/JothamEtimu" rel="me noopener" target="_blank">X</a>
+        <a href="https://www.tiktok.com/@etimujotham" rel="me noopener" target="_blank">TIKTOK</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>© <span id="year">2026</span> ETIMU JOTHAM</span></footer>
+
+  <!-- ============================================================
+       PROJECT POPUP (fills in automatically when a card is clicked
+       — you don't need to edit anything in here)
+       ============================================================ -->
+<dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-anim">
+    <button class="dialog-close" type="button" aria-label="Close project">
+    <svg width="48" height="48" viewBox="0 0 91 119" fill="#E0E0E0" xmlns="http://www.w3.org/2000/svg" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round"><path d="M64.7844 59.2056L88.6744 72.8755L79.3844 88.8455L60.0544 77.6855L55.6644 75.1555L54.9944 76.3154L31.7744 116.335L22.4844 111.095L45.7244 70.9656L46.3744 69.8354L22.4844 56.3455L31.1644 41.4155L31.7744 40.3755L36.2644 42.9355L45.4044 48.1355L55.6644 53.9756L79.3844 12.8855L88.6744 18.1355L64.7844 59.2056Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M46.3744 69.8354L45.7244 70.9656L22.4844 111.095L12.0444 105.875L2.48438 101.095L26.3744 59.8354L46.3744 69.8354Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M31.7744 116.335L11.7744 106.335L2.48438 101.095L12.0444 105.875L22.4844 111.095L31.7744 116.335Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M46.3744 69.8354L26.3744 59.8354L2.48438 46.3455L22.4844 56.3455L46.3744 69.8354Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M79.3847 12.8855L55.6646 53.9756L45.4046 48.1355L36.2646 42.9355L59.3846 2.8855L79.3847 12.8855Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M31.7744 40.3755L31.1644 41.4155L22.4844 56.3455L2.48438 46.3455L11.7744 30.3755L31.7744 40.3755Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M79.3842 88.8455L59.3841 78.8455L54.9941 76.3154L55.6641 75.1555L60.0541 77.6855L79.3842 88.8455Z" stroke="#0B0B0F" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="dialog-media" id="dialog-media"><div class="dialog-placeholder">PROJECT MEDIA</div></div>
+    <div class="dialog-body">
+      <div class="dialog-meta"><span id="dialog-type">3D / Blender</span><span id="dialog-year">2026</span></div>
+      <h2 id="dialog-title">Project title</h2>
+      <p id="dialog-description">Project description goes here.</p>
+      <div class="dialog-gallery" id="dialog-gallery"></div>
+      <div class="dialog-controls" aria-label="Project navigation">
+
+
+        <button id="dialog-prev" class="modal-nav modal-prev" type="button">
+<svg width="48" height="48" viewBox="0 0 79 115" fill="#E0E0E0" xmlns="http://www.w3.org/2000/svg" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round"><path d="M43.1099 75.8701L76.3098 94.8L66.2098 112.22L46.8198 101.17L22.9199 87.54L32.3999 71.17L66.2098 12.8501L76.3098 18.6101L43.1099 75.8701Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M66.2098 12.8501L32.3999 71.17L22.9199 87.54L2.91992 77.54L46.2098 2.8501L66.2098 12.8501Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M66.2098 112.22L46.2098 102.22L2.91992 77.54L22.9199 87.54L46.8198 101.17L66.2098 112.22Z" stroke="#0B0B0F" stroke-linejoin="round"/></svg>
+  <span class="modal-nav-text">
+   <span class="modal-nav-label">PREV</span>
+    <small></small>
+  </span>
+</button>
+
+<button id="dialog-next" class="modal-nav modal-next" type="button">
+  <span class="modal-nav-text">
+    <span class="modal-nav-label">NEXT</span>
+    <small></small>
+  </span>
+<svg width="48" height="48" viewBox="0 0 78 114" fill="#E0E0E0" xmlns="http://www.w3.org/2000/svg" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round"><path d="M32.1508 12.01L31.5408 13.0601L22.0508 29.4301L2.05078 19.4301L12.1508 2.01001L32.1508 12.01Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M75.4608 36.6901L32.1508 111.38L22.0508 105.62L55.2508 48.36L45.9608 43.0701L22.0508 29.4301L31.5408 13.0601L32.1508 12.01L75.4608 36.6901Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M32.1508 111.38L12.1508 101.38L2.05078 95.6201L12.4708 100.83L22.0508 105.62L32.1508 111.38Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M55.2508 48.3599L22.0508 105.62L12.4708 100.83L2.05078 95.6199L35.2508 38.3599L45.6708 43.5699L55.2508 48.3599Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M55.2508 48.3601L45.6708 43.5702L35.2508 38.3601L2.05078 19.4302L22.0508 29.4302L45.9608 43.0702L55.2508 48.3601Z" stroke="#0B0B0F" stroke-linejoin="round"/></svg>
+</button>
+    </div>
+    </div>
+  </div>
+</dialog>
+
+
+<dialog id="dialog-lightbox" class="dialog-lightbox" aria-label="Full image view">
+  <button class="lightbox-close" type="button" aria-label="Close full image">
+    <svg width="48" height="48" viewBox="0 0 91 119" fill="#E0E0E0" xmlns="http://www.w3.org/2000/svg" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round"><path d="M64.7844 59.2056L88.6744 72.8755L79.3844 88.8455L60.0544 77.6855L55.6644 75.1555L54.9944 76.3154L31.7744 116.335L22.4844 111.095L45.7244 70.9656L46.3744 69.8354L22.4844 56.3455L31.1644 41.4155L31.7744 40.3755L36.2644 42.9355L45.4044 48.1355L55.6644 53.9756L79.3844 12.8855L88.6744 18.1355L64.7844 59.2056Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M46.3744 69.8354L45.7244 70.9656L22.4844 111.095L12.0444 105.875L2.48438 101.095L26.3744 59.8354L46.3744 69.8354Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M31.7744 116.335L11.7744 106.335L2.48438 101.095L12.0444 105.875L22.4844 111.095L31.7744 116.335Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M46.3744 69.8354L26.3744 59.8354L2.48438 46.3455L22.4844 56.3455L46.3744 69.8354Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M79.3847 12.8855L55.6646 53.9756L45.4046 48.1355L36.2646 42.9355L59.3846 2.8855L79.3847 12.8855Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M31.7744 40.3755L31.1644 41.4155L22.4844 56.3455L2.48438 46.3455L11.7744 30.3755L31.7744 40.3755Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M79.3842 88.8455L59.3841 78.8455L54.9941 76.3154L55.6641 75.1555L60.0541 77.6855L79.3842 88.8455Z" stroke="#0B0B0F" stroke-linejoin="round"/></svg>
+  </button>
+  <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">
+<svg width="48" height="48" viewBox="0 0 79 115" fill="#E0E0E0" xmlns="http://www.w3.org/2000/svg" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round"><path d="M43.1099 75.8701L76.3098 94.8L66.2098 112.22L46.8198 101.17L22.9199 87.54L32.3999 71.17L66.2098 12.8501L76.3098 18.6101L43.1099 75.8701Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M66.2098 12.8501L32.3999 71.17L22.9199 87.54L2.91992 77.54L46.2098 2.8501L66.2098 12.8501Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M66.2098 112.22L46.2098 102.22L2.91992 77.54L22.9199 87.54L46.8198 101.17L66.2098 112.22Z" stroke="#0B0B0F" stroke-linejoin="round"/></svg>
+  </button>
+  <img id="lightbox-image" src="" alt="">
+  <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">
+    <svg width="48" height="48" viewBox="0 0 78 114" fill="#E0E0E0" xmlns="http://www.w3.org/2000/svg" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round"><path d="M32.1508 12.01L31.5408 13.0601L22.0508 29.4301L2.05078 19.4301L12.1508 2.01001L32.1508 12.01Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M75.4608 36.6901L32.1508 111.38L22.0508 105.62L55.2508 48.36L45.9608 43.0701L22.0508 29.4301L31.5408 13.0601L32.1508 12.01L75.4608 36.6901Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M32.1508 111.38L12.1508 101.38L2.05078 95.6201L12.4708 100.83L22.0508 105.62L32.1508 111.38Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M55.2508 48.3599L22.0508 105.62L12.4708 100.83L2.05078 95.6199L35.2508 38.3599L45.6708 43.5699L55.2508 48.3599Z" stroke="#0B0B0F" stroke-linejoin="round"/><path d="M55.2508 48.3601L45.6708 43.5702L35.2508 38.3601L2.05078 19.4302L22.0508 29.4302L45.9608 43.0702L55.2508 48.3601Z" stroke="#0B0B0F" stroke-linejoin="round"/></svg>
+  </button>
+</dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
