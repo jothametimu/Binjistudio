@@ -164,6 +164,8 @@ a:focus-visible {
   opacity: .5;
 }
 
+.menu-toggle { display: none; position: relative; width: 20px; height: 20px; border: 0; background: none; padding: 0; cursor: pointer; }
+
 
 .mobile-nav {
   display: none; /* shown on mobile, see RESPONSIVE section */
@@ -1177,6 +1179,7 @@ a:focus-visible {
 
   .mobile-nav.open { display: flex; }
 }
+
 
 @media (max-width: 600px) {
   .hero h1 { font-size: 22vw; }
