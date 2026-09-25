@@ -129,7 +129,7 @@ a:focus-visible {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  padding: 18px var(--pad);
+  padding: 5px var(--pad);
   border-bottom: 1px solid rgba(17, 17, 15, .08);
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(14px);
@@ -137,7 +137,6 @@ a:focus-visible {
 
 .wordmark,
 .site-header nav a,
-.menu-toggle,
 .eyebrow,
 .tool-list span,
 .socials a {
@@ -165,13 +164,6 @@ a:focus-visible {
   opacity: .5;
 }
 
-.menu-toggle {
-  display: none; /* shown on mobile, see RESPONSIVE section */
-  border: 0;
-  background: none;
-  padding: 0;
-  cursor: pointer;
-}
 
 .mobile-nav {
   display: none; /* shown on mobile, see RESPONSIVE section */
@@ -1140,8 +1132,11 @@ a:focus-visible {
 
 @media (max-width: 900px) {
   .site-header nav { display: none; }
-  .menu-toggle { display: block; }
-
+.menu-toggle { display: inline-flex; position: relative; width: 44px; height: 44px; border: 0; background: none; appearance: none; -webkit-appearance: none; color: var(--ink); font-size: 20px; line-height: 1; cursor: pointer; display: grid; place-items: center; transition: transform var(--fast) var(--ease); }
+.menu-icon { position: absolute; inset: 0; transition: opacity var(--fast) ease, transform var(--fast) var(--ease); }
+.icon-close { opacity: 0; transform: rotate(-90deg) scale(.7); }
+.menu-toggle[aria-expanded="true"] .icon-open { opacity: 0; transform: rotate(90deg) scale(.7); }
+.menu-toggle[aria-expanded="true"] .icon-close { opacity: 1; transform: rotate(0deg) scale(1); }
   .hero,
   .art-feature,
   .about,
