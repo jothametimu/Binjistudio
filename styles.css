@@ -171,6 +171,8 @@ a:focus-visible {
   display: none; /* shown on mobile, see RESPONSIVE section */
 }
 
+.wordmark { display: inline-flex; align-items: center; }
+.wordmark-logo { height: 45px; width: 90px; display: block; }
 
 /* ============================================================
    4. HERO SECTION (top of page, big name + intro)
