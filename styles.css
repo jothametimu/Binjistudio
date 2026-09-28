@@ -206,6 +206,7 @@ a:focus-visible {
   letter-spacing: -.085em;
   margin: 0 0 34px;
   font-weight: 700;
+  z-index: 999;
 }
 
 .hero h1 span {
@@ -267,7 +268,7 @@ a:focus-visible {
 .hero-visual img,
 .hero-visual video {
   position: fixed;
-  z-index: 1;
+  z-index: -1;
   object-fit: cover;
   display: block; /* hidden until .has-media is added */
 }
@@ -315,6 +316,7 @@ a:focus-visible {
 .asset-note code {
   color: #fff;
 }
+
 
 
 /* ============================================================

@@ -247,3 +247,24 @@ document.addEventListener('keydown', event => {
   if (event.key === 'ArrowRight') moveProject(1);
   if (event.key === 'Escape') dialog.close();
 });
+
+
+
+
+// ---- Hero title: intensify + music on hover ----
+const heroTitle = document.getElementById('hero-title');
+const intensifyAudio = document.getElementById('intensify-audio');
+
+function startIntensify() {
+  heroTitle.classList.add('animated', 'intensifies');
+  intensifyAudio.currentTime = 0;
+  intensifyAudio.play().catch(() => {}); // browser may block until the first click
+}
+
+function stopIntensify() {
+  heroTitle.classList.remove('animated', 'intensifies');
+  intensifyAudio.pause();
+}
+
+heroTitle?.addEventListener('pointerenter', startIntensify);
+heroTitle?.addEventListener('pointerleave', stopIntensify);
