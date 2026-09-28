@@ -117,7 +117,7 @@ a:focus-visible {
 
 /* shared section padding, used by most <section> tags */
 .section-pad {
-  padding: clamp(92px, 11vw, 160px) var(--pad);
+  padding: clamp(50px, 11vw, 160px) var(--pad);
 }
 
 
@@ -285,42 +285,7 @@ a:focus-visible {
 .hero-visual:has(.hero-visual-link:hover) { filter: brightness(1.06); }
 .hero-visual:has(.hero-visual-link:hover) .hero-orb { animation-play-state: paused; }
 
-.hero-orb {
-  position: absolute;
-  aspect-ratio: 1;
-  border-radius: 48% 52% 42% 58%;
-  filter: saturate(1.05);
-  transform-style: preserve-3d;
-}
 
-.orb-one {
-  width: 58%;
-  background:
-    radial-gradient(circle at 28% 28%, #fff, transparent 10%),
-    radial-gradient(circle at 60% 37%, #ff5a00, transparent 44%),
-    radial-gradient(circle at 55% 70%, #5f4aff, transparent 56%);
-  animation: blob-float 9s ease-in-out infinite, blob-turn 15s linear infinite;
-}
-
-.orb-two {
-  width: 36%;
-  background:
-    radial-gradient(circle at 45% 44%, #fff, transparent 13%),
-    radial-gradient(circle at 45% 55%, #00d4ff, transparent 54%);
-  animation: blob-float 11s ease-in-out -2s infinite reverse;
-  mix-blend-mode: screen;
-}
-
-.orb-three {
-  width: 72%;
-  height: 22%;
-  border-radius: 50%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .13), transparent);
-  transform: rotate(-18deg);
-  filter: blur(18px);
-  animation: scan 6s ease-in-out infinite;
-  mix-blend-mode: screen;
-}
 
 .hero-caption {
   position: absolute;
@@ -401,14 +366,13 @@ a:focus-visible {
   justify-content: center;
   gap: 8px;
   padding: 7px;
-  border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255, 255, 255, .24);
 }
 
 .filter {
-  border: 1px solid transparent;
-  border-radius: 999px;
+  border: 1px solid;
+  border-radius: 4px;
   background: transparent;
   padding: 9px 13px 8px;
   font-family: var(--font-mono);
@@ -734,41 +698,6 @@ a:focus-visible {
   line-height: 1.5;
   color: #9c9c95;
   max-width: 440px;
-}
-
-
-/* ============================================================
-   10. SERVICES SECTION
-   ============================================================ */
-
-.services {
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 80px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
-
-.services-grid > div {
-  border-top: 1px solid var(--line);
-  padding-top: 16px;
-}
-
-.services h3 {
-  font-size: 15px;
-  letter-spacing: .12em;
-  margin: 0 0 18px;
-}
-
-.services-grid p {
-  font-size: 17px;
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
 }
 
 
@@ -1202,7 +1131,7 @@ a:focus-visible {
 
   .gallery-item.large { grid-row: auto; min-height: 420px; }
 
-  .email-link { font-size: 11vw; }
+  .email-link { font-size: 8vw; }
   .site-footer { flex-direction: column; }
   .feature-dark { gap: 40px; }
 
