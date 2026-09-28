@@ -258,13 +258,21 @@ const intensifyAudio = document.getElementById('intensify-audio');
 function startIntensify() {
   heroTitle.classList.add('animated', 'intensifies');
   intensifyAudio.currentTime = 0;
-  intensifyAudio.play().catch(() => {}); // browser may block until the first click
+  intensifyAudio.play().catch(() => {});
 }
 
 function stopIntensify() {
   heroTitle.classList.remove('animated', 'intensifies');
   intensifyAudio.pause();
+  intensifyAudio.currentTime = 0;
 }
 
 heroTitle?.addEventListener('pointerenter', startIntensify);
 heroTitle?.addEventListener('pointerleave', stopIntensify);
+heroTitle?.addEventListener('pointercancel', stopIntensify);
+
+// When the shake animation finishes, stop the audio too (even if the cursor is still there)
+heroTitle?.addEventListener('animationend', event => {
+  if (event.target !== heroTitle) return; // ignore the letter spans' own intro animations
+  stopIntensify();
+});

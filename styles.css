@@ -317,8 +317,12 @@ a:focus-visible {
   color: #fff;
 }
 
-
-
+#hero-title {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  mix-blend-mode: difference;
+}
 /* ============================================================
    5. WORK / PROJECTS GRID
    ============================================================ */
