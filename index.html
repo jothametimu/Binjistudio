@@ -134,7 +134,7 @@
     </button>
   </header>
   <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
-    <a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#services">SERVICES</a><a href="#contact">CONTACT</a>
+    <a href="#work">WORK</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>
   </nav>
 
   <main id="top">
@@ -144,7 +144,7 @@
          ============================================================ -->
     <section class="hero section-pad" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">ARTIST / 3D GENERALIST</p>
+        <p class="eyebrow">FIND EXPRESSION</p>
         <h1 id="hero-title" class="hero-title"><span>BINJI</span><span>STUDIO</span></h1>
         <p class="hero-statement">I explore visual ideas across different mediums — from traditional art to digital 3D, motion and beyond.</p>
         <div class="hero-meta"><span>KAMPALA, UGANDA</span>
@@ -178,21 +178,16 @@
          WORK — project grid with filter buttons
          ============================================================ -->
     <section id="work" class="work section-pad" aria-labelledby="work-title">
-      <div class="section-heading">
-        <p class="eyebrow">SELECTED WORK</p>
-        <h2 id="work-title">ONE PRACTICE,<br><em>DIFFERENT MEDIUMS.</em></h2>
-      </div>
 
       <!-- Filter buttons. The number in each <span> is just a label —
            update it if you add/remove projects in a category. -->
       <div class="filter-wrap">
         <div class="filter-row" role="group" aria-label="Filter portfolio work">
-          <button class="filter is-active" type="button" data-filter="all">ALL</button>
           <button class="filter" type="button" data-filter="3d">3D</button>
           <button class="filter" type="button" data-filter="art">ART</button>
           <button class="filter" type="button" data-filter="motion">MOTION</button>
           <button class="filter" type="button" data-filter="archviz">ARCHVIZ</button>
-          <button class="filter" type="button" data-filter="experimental">EXPERIMENTAL</button>
+          <button class="filter is-active" type="button" data-filter="all">ALL</button>
         </div>
       </div>
 
@@ -215,7 +210,7 @@
       -->
       <div class="work-grid" id="work-grid">
 
-<article class="work-card work-wide reveal" data-index="0" data-category="3d" 
+        <article class="work-card work-wide reveal" data-index="0" data-category="3d" 
 data-title="CHAAPA LEAGUE TROPHY" data-type="3D / Blender" data-year="2025"
 data-gallery="
 images/chaapa-trophy/chaapa-render-001.webp,
@@ -236,7 +231,39 @@ images/chaapa-trophy/chaapa-render-007.webp,
           </button>
         </article>
 
-        <article class="work-card reveal" data-index="1" data-category="art" 
+        <article class="work-card reveal" data-index="1" data-category="motion" 
+        data-title="UCTV IDENTS" data-type="Motion Graphics / Blender" data-year="2026"
+        data-gallery="
+        images/drawing/drawing-001.webp,
+        images/drawing/drawing-005.webp
+        "> <!--GALLERY IMAGES FOR POPUP-->
+          <button class="card-button" type="button" aria-label="Open Uctv project">
+            <div class="media-box">
+              <!-- No video added yet, so this shows a placeholder image.
+                   Once you have a clip, delete the <img> line below and
+                   uncomment the <video> line, pointing it at your file. -->
+              <img src="images/uctv/uctv-001.webp" alt="Uctv — motion graphics">
+              <!-- <video src="/video/motion-01.mp4" muted loop autoplay playsinline></video> -->
+            </div>
+            <div class="work-info"><h3>UCTV IDENTS</h3><p>Motion Graphics</p><span>2026</span></div>
+          </button>
+        </article>
+
+        <article class="work-card work-tall reveal" data-index="2" data-category="3d" 
+        data-title="LUBOWA KARTING" data-type="3D / Blender" data-year="2026"
+        data-gallery="
+        images/drawing/drawing-001.webp,
+        images/drawing/drawing-005.webp
+        "> <!--GALLERY IMAGES FOR POPUP-->
+          <button class="card-button" type="button" aria-label="Open lubowa karting project">
+            <div class="media-box">
+              <img src="images/lubowa-karting/lubowa-001.webp" alt="lubowa karting — 3D">
+            </div>
+            <div class="work-info"><h3>LUBOWA KARTING</h3><p>3d Animations</p><span>2026</span></div>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-index="3" data-category="art" 
         data-title="PORTRAIT DRAWING" data-type="Drawing / Charcoal" data-year="2024"
         data-gallery="
         images/drawing/drawing-001.webp,
@@ -255,25 +282,7 @@ images/chaapa-trophy/chaapa-render-007.webp,
           </button>
         </article>
 
-        <article class="work-card reveal" data-index="2" data-category="motion" 
-        data-title="STARTIMES PREMIER LEAGUE" data-type="Motion Graphics / Blender" data-year="2026"
-        data-gallery="
-        images/drawing/drawing-001.webp,
-        images/drawing/drawing-005.webp
-        "> <!--GALLERY IMAGES FOR POPUP-->
-          <button class="card-button" type="button" aria-label="Open Startimes Premier League project">
-            <div class="media-box">
-              <!-- No video added yet, so this shows a placeholder image.
-                   Once you have a clip, delete the <img> line below and
-                   uncomment the <video> line, pointing it at your file. -->
-              <img src="images/supl/supl-001.webp" alt="Startimes Premier League — motion graphics">
-              <!-- <video src="/video/motion-01.mp4" muted loop autoplay playsinline></video> -->
-            </div>
-            <div class="work-info"><h3>STARTIMES PREMIER LEAGUE</h3><p>Motion Graphics</p><span>2026</span></div>
-          </button>
-        </article>
-
-        <article class="work-card reveal" data-index="3" data-category="art" 
+        <article class="work-card reveal" data-index="4" data-category="art" 
         data-title="PAINTINGS" data-type="Acrylic / Watercolor / Vinyl" data-year="2024"
         data-gallery="
         images/painting/painting-001.webp,
@@ -288,20 +297,6 @@ images/chaapa-trophy/chaapa-render-007.webp,
               <img src="images/painting/painting-001.webp" alt="Paintings — acrylic painting">
             </div>
             <div class="work-info"><h3>PAINTINGS</h3><p>Painting / Acrylic</p><span>2024</span></div>
-          </button>
-        </article>
-
-        <article class="work-card work-tall reveal" data-index="4" data-category="3d" 
-        data-title="LUBOWA KARTING" data-type="3D / Blender" data-year="2026"
-        data-gallery="
-        images/drawing/drawing-001.webp,
-        images/drawing/drawing-005.webp
-        "> <!--GALLERY IMAGES FOR POPUP-->
-          <button class="card-button" type="button" aria-label="Open lubowa karting project">
-            <div class="media-box">
-              <img src="images/lubowa-karting/lubowa-001.webp" alt="lubowa karting — 3D">
-            </div>
-            <div class="work-info"><h3>LUBOWA KARTING</h3><p>3d Animations</p><span>2026</span></div>
           </button>
         </article>
 
@@ -339,8 +334,7 @@ images/chaapa-trophy/chaapa-render-007.webp,
          STATEMENT — big centered line
          ============================================================ -->
     <section class="statement section-pad" aria-label="Creative statement">
-      <p class="eyebrow">THE PRACTICE</p>
-      <p class="big-statement">Different mediums, same curiosity. <span>Drawing, painting, 3D, animation and design are ways of testing an idea.</span></p>
+      <p class="big-statement">Different mediums, same curiosity. <span>Drawing, painting, 3D, animation, different ways of testing an idea.</span></p>
     </section>
 
     <!-- ============================================================
@@ -348,11 +342,10 @@ images/chaapa-trophy/chaapa-render-007.webp,
          ============================================================ -->
     <section class="three-d feature-dark section-pad" aria-labelledby="three-d-title">
       <div>
-        <p class="eyebrow">01 / DIGITAL</p>
-        <h2 id="three-d-title">3D<br><em>GENERALIST</em></h2>
+        <h2 id="three-d-title">DESIGN<br><em>REEL</em></h2>
       </div>
       <div class="feature-copy">
-        <p>Modelling, rendering, lighting, animation and motion graphics — built primarily in Blender and finished across Adobe tools.</p>
+        <p>Modelling, rendering, lighting and animations are built primarily in Blender and finished across Adobe tools and various software.</p>
         <div class="tool-list"><span>BLENDER</span><span>AFTER EFFECTS</span><span>PHOTOSHOP</span><span>ILLUSTRATOR</span></div>
       </div>
 
@@ -386,7 +379,7 @@ images/chaapa-trophy/chaapa-render-007.webp,
     <section id="contact" class="contact section-pad" aria-labelledby="contact-title">
       <p class="eyebrow">CONTACT</p>
       <h2 id="contact-title">HAVE A PROJECT<br><em>IN MIND?</em></h2>
-      <a class="email-link" href="mailto:jothametimu@gmail.com">jothametimu@gmail.com<span aria-hidden="true">↗</span></a>
+      <a class="email-link" href="mailto:jothametimu@gmail.com">jothametimu@gmail.com</a>
       <div class="socials">
         <a href="https://www.instagram.com/jotham_etimu/" rel="me noopener" target="_blank">INSTAGRAM</a>
         <a href="https://www.youtube.com/@JothamEtimu" rel="me noopener" target="_blank">YOUTUBE</a>

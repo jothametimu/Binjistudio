@@ -35,12 +35,11 @@
 
 :root {
   /* --- Colours --- */
-  --bg: #f1eee6;              /* main page background */
   --paper: #f7f4ec;           /* lighter background (popups) */
-  --ink: #11110f;             /* main text colour */
+  --ink: #29241f;             /* main text colour */
   --muted: #6e6b62;           /* secondary/grey text */
   --line: #c9c5bb;            /* thin border lines */
-  --dark: #0a0a0a;            /* dark section background */
+  --dark: #161514;            /* dark section background */
 
   /* --- Fonts ---
      Body/heading font, monospace label font, and the
@@ -104,17 +103,6 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
-/* subtle film-grain texture over everything */
-.noise {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 99;
-  opacity: .055;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
-}
-
 /* shared section padding, used by most <section> tags */
 .section-pad {
   padding: clamp(50px, 11vw, 160px) var(--pad);
@@ -135,7 +123,7 @@ a:focus-visible {
   gap: 30px;
   padding: 5px var(--pad);
   border-bottom: 1px solid rgba(17, 17, 15, .08);
-  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  background: #ffffff8f;
   backdrop-filter: blur(14px);
 }
 
@@ -183,7 +171,6 @@ a:focus-visible {
    ============================================================ */
 
 .hero {
-  min-height: 100vh;
   display: grid;
   grid-template-columns: .9fr 1.1fr;
   align-items: end;
@@ -320,7 +307,7 @@ a:focus-visible {
 #hero-title {
   position: relative;
   z-index: 10;
-  color: #fff;
+  color: #29241f;
   mix-blend-mode: difference;
 }
 /* ============================================================
@@ -363,7 +350,7 @@ a:focus-visible {
 .filter-wrap {
   display: flex;
   justify-content: center;
-  margin: 15px 0 42px;
+  margin: -58px 0 20px;
 }
 
 .filter-row {
@@ -373,7 +360,7 @@ a:focus-visible {
   gap: 8px;
   padding: 7px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, .24);
+  background: rgb(252, 251, 251);
 }
 
 .filter {
@@ -426,7 +413,6 @@ a:focus-visible {
 .work-card:nth-child(5) { animation-delay: 210ms; }
 .work-card:nth-child(6) { animation-delay: 260ms; }
 
-.work-wide { grid-column: span 8; }
 .work-tall { grid-column: span 4; }
 
 .card-button {
@@ -634,8 +620,9 @@ a:focus-visible {
 
 .about img {
   width: 100%;
-  object-fit: none;
+  object-fit: cover;
   display: block;
+  aspect-ratio: 6 / 5;
 }
 
 .about-copy {
@@ -1053,7 +1040,7 @@ a:focus-visible {
     left: 0;
     right: 0;
     z-index: 19;
-    background: var(--bg);
+    background: #ffffff;
     padding: 18px var(--pad);
     border-bottom: 1px solid var(--line);
     display: none;
@@ -1066,6 +1053,8 @@ a:focus-visible {
   }
 
   .mobile-nav.open { display: flex; }
+  .filter-row { margin-top: 25px; }
+
 }
 
 
@@ -1100,7 +1089,7 @@ a:focus-visible {
     font-size: 18vw;
   }
 
-  .filter-row { border-radius: 22px; }
+  .filter-row { border-radius: 22px; margin-top: 65px; }
   .filter { flex: 0 0 auto; }
   .dialog-media { min-height: 300px; height: 46vh; }
   .dialog-controls { margin-top: 24px; }
