@@ -627,7 +627,7 @@ a:focus-visible {
 
 .about-copy {
   max-width: 600px;
-  font-size: clamp(21px, 2.5vw, 34px);
+  font-size: clamp(20px, 2.5vw, 34px);
   line-height: 1.18;
 }
 
