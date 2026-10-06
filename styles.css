@@ -358,13 +358,9 @@ a:focus-visible {
   justify-content: center;
   gap: 8px;
   padding: 7px;
-  border-radius: 999px;
-  background: rgb(252, 251, 251);
 }
 
 .filter {
-  border: 1px solid;
-  border-radius: 4px;
   background: transparent;
   padding: 9px 13px 8px;
   font-family: var(--font-mono);
