@@ -185,28 +185,23 @@ function setDialogGallery(card) {
     item.className = 'dialog-gallery-item';
 
 
-    const media = document.createElement(entry.isVideo ? 'video' : 'img');
-media.src = entry.src;
-if (entry.isVideo) {
-  media.muted = true;
-  media.playsInline = true;
-  media.preload = 'metadata'; // loads just the first frame, not autoplay
-  media.setAttribute('aria-label', entry.alt);
-} else {
-  media.alt = entry.alt;
-  media.loading = 'lazy';
-}
-media.onerror = () => item.remove();
+   const media = document.createElement(entry.isVideo ? 'video' : 'img');
+    media.src = entry.src;
+    if (entry.isVideo) {
+      media.muted = true;
+      media.loop = true;
+      media.playsInline = true;
+      media.autoplay = true;
+      media.setAttribute('aria-label', entry.alt);
+    } else {
+      media.alt = entry.alt;
+      media.loading = 'lazy';
+    }
+    media.onerror = () => item.remove();
 
-item.appendChild(media);
-if (entry.isVideo) {
-  const playIcon = document.createElement('div');
-  playIcon.className = 'gallery-play-icon';
-  playIcon.innerHTML = '▶';
-  item.appendChild(playIcon);
-}
-item.addEventListener('click', () => openLightbox(list, index));
-dialogGallery.appendChild(item);
+    item.appendChild(media);
+    item.addEventListener('click', () => openLightbox(list, index));
+    dialogGallery.appendChild(item);
   });
 }
 
