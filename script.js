@@ -76,14 +76,30 @@ let lightboxIndex = 0;
 const lightboxPrev = document.querySelector('.lightbox-prev');
 const lightboxNext = document.querySelector('.lightbox-next');
 
+const lightboxVideo = document.getElementById('lightbox-video');
+
 function showLightboxImage() {
   const current = lightboxList[lightboxIndex];
   if (!current) return;
-  lightboxImage.src = current.src;
-  lightboxImage.alt = current.alt;
+
+  if (current.isVideo) {
+    lightboxVideo.src = current.src;
+    lightboxVideo.style.display = 'block';
+    lightboxImage.style.display = 'none';
+    lightboxImage.removeAttribute('src');
+  } else {
+    lightboxImage.src = current.src;
+    lightboxImage.alt = current.alt;
+    lightboxImage.style.display = 'block';
+    lightboxVideo.style.display = 'none';
+    lightboxVideo.pause();
+    lightboxVideo.removeAttribute('src');
+  }
+
   lightboxPrev.disabled = lightboxIndex === 0;
   lightboxNext.disabled = lightboxIndex === lightboxList.length - 1;
 }
+
 
 function openLightbox(list, startIndex) {
   if (!dialogLightbox || !lightboxImage) return;
@@ -149,6 +165,49 @@ function setDialogMedia(card) {
     clone.alt = `${card.dataset.title} — ${card.dataset.type}`;
   }
   dialogMedia.appendChild(clone);
+}
+
+function setDialogGallery(card) {
+  if (!dialogGallery) return;
+  dialogGallery.innerHTML = '';
+  const list = (card.dataset.gallery || '')
+    .split(',')
+    .map(item => item.trim())
+    .filter(Boolean)
+    .map(src => ({
+      src,
+      alt: `${card.dataset.title} — additional view`,
+      isVideo: /\.(mp4|webm|mov)$/i.test(src)
+    }));
+
+  list.forEach((entry, index) => {
+    const item = document.createElement('div');
+    item.className = 'dialog-gallery-item';
+
+
+    const media = document.createElement(entry.isVideo ? 'video' : 'img');
+media.src = entry.src;
+if (entry.isVideo) {
+  media.muted = true;
+  media.playsInline = true;
+  media.preload = 'metadata'; // loads just the first frame, not autoplay
+  media.setAttribute('aria-label', entry.alt);
+} else {
+  media.alt = entry.alt;
+  media.loading = 'lazy';
+}
+media.onerror = () => item.remove();
+
+item.appendChild(media);
+if (entry.isVideo) {
+  const playIcon = document.createElement('div');
+  playIcon.className = 'gallery-play-icon';
+  playIcon.innerHTML = '▶';
+  item.appendChild(playIcon);
+}
+item.addEventListener('click', () => openLightbox(list, index));
+dialogGallery.appendChild(item);
+  });
 }
 
 // File gallery function
