@@ -287,28 +287,28 @@ document.addEventListener('keydown', event => {
 
 
 
-// ---- Hero title: intensify + music on hover ----
+// ---- Hero title: fontalicious + music on hover ----
 const heroTitle = document.getElementById('hero-title');
-const intensifyAudio = document.getElementById('intensify-audio');
+const fontaliciousAudio = document.getElementById('fontalicious-audio');
 
-function startIntensify() {
+function startfontalicious() {
   heroTitle.classList.add('animated', 'intensifies');
-  intensifyAudio.currentTime = 0;
-  intensifyAudio.play().catch(() => {});
+  fontaliciousAudio.currentTime = 0;
+  fontaliciousAudio.play().catch(() => {});
 }
 
-function stopIntensify() {
+function stopfontalicious() {
   heroTitle.classList.remove('animated', 'intensifies');
-  intensifyAudio.pause();
-  intensifyAudio.currentTime = 0;
+  fontaliciousAudio.pause();
+  fontaliciousAudio.currentTime = 0;
 }
 
-heroTitle?.addEventListener('pointerenter', startIntensify);
-heroTitle?.addEventListener('pointerleave', stopIntensify);
-heroTitle?.addEventListener('pointercancel', stopIntensify);
+heroTitle?.addEventListener('pointerenter', startfontalicious);
+heroTitle?.addEventListener('pointerleave', stopfontalicious);
+heroTitle?.addEventListener('pointercancel', stopfontalicious);
 
 // When the shake animation finishes, stop the audio too (even if the cursor is still there)
 heroTitle?.addEventListener('animationend', event => {
   if (event.target !== heroTitle) return; // ignore the letter spans' own intro animations
-  stopIntensify();
+  stopfontalicious();
 });
