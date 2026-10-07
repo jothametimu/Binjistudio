@@ -174,11 +174,15 @@ function setDialogGallery(card) {
     .split(',')
     .map(item => item.trim())
     .filter(Boolean)
-    .map(src => ({
-      src,
-      alt: `${card.dataset.title} — additional view`,
-      isVideo: /\.(mp4|webm|mov)$/i.test(src)
-    }));
+    .map(src => {
+  const [mainSrc, poster] = src.split('|').map(s => s.trim());
+  return {
+    src: mainSrc,
+    poster: poster || '',
+    alt: `${card.dataset.title} — additional view`,
+    isVideo: /\.(mp4|webm|mov)$/i.test(mainSrc)
+  };
+});
 
   list.forEach((entry, index) => {
     const item = document.createElement('div');
@@ -186,18 +190,18 @@ function setDialogGallery(card) {
 
 
    const media = document.createElement(entry.isVideo ? 'video' : 'img');
-    media.src = entry.src;
-    if (entry.isVideo) {
-      media.muted = true;
-      media.loop = true;
-      media.playsInline = true;
-      media.autoplay = true;
-      media.setAttribute('aria-label', entry.alt);
-    } else {
-      media.alt = entry.alt;
-      media.loading = 'lazy';
-    }
-    media.onerror = () => item.remove();
+media.src = entry.src;
+if (entry.isVideo) {
+  media.muted = true;
+  media.playsInline = true;
+  media.preload = 'none';           // don't fetch any video data just for the thumbnail
+  if (entry.poster) media.poster = entry.poster;
+  media.setAttribute('aria-label', entry.alt);
+} else {
+  media.alt = entry.alt;
+  media.loading = 'lazy';
+}
+media.onerror = () => item.remove();
 
     item.appendChild(media);
     item.addEventListener('click', () => openLightbox(list, index));
