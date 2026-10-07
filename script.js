@@ -292,13 +292,13 @@ const heroTitle = document.getElementById('hero-title');
 const fontaliciousAudio = document.getElementById('fontalicious-audio');
 
 function startfontalicious() {
-  heroTitle.classList.add('animated', 'intensifies');
+  heroTitle.classList.add('animated', 'fontalicious');
   fontaliciousAudio.currentTime = 0;
   fontaliciousAudio.play().catch(() => {});
 }
 
 function stopfontalicious() {
-  heroTitle.classList.remove('animated', 'intensifies');
+  heroTitle.classList.remove('animated', 'fontalicious');
   fontaliciousAudio.pause();
   fontaliciousAudio.currentTime = 0;
 }
