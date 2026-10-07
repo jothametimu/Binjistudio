@@ -3,31 +3,31 @@
     font-family: helvetica;
   }
   10% {
-    font-family: cursive;
+    font-family: Roboto;
   }
   20% {
-    font-family: fantasy;
+    font-family: inter;
   }
   30% {
-    font-family: monospace;
+    font-family: 'Courier New', Courier, monospace;
   }
   40% {
     font-family: Palatino;
   }
   50% {
-    font-family: Tahoma;
+    font-family: lato;
   }
   60% {
     font-family: impact;
   }
   70% {
-    font-family: cursive;
+    font-family: Oswald;
   }
   80% {
     font-family: monospace;
   }
   90% {
-    font-family: fantasy;
+    font-family: Open;
   }
   99% {
     font-family: futura;
