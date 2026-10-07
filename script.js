@@ -205,29 +205,6 @@ function setDialogGallery(card) {
   });
 }
 
-// File gallery function
-function setDialogGallery(card) {
-  if (!dialogGallery) return;
-  dialogGallery.innerHTML = '';
-  const list = (card.dataset.gallery || '')
-    .split(',')
-    .map(item => item.trim())
-    .filter(Boolean)
-    .map(src => ({ src, alt: `${card.dataset.title} — additional view` }));
-
-  list.forEach((entry, index) => {
-    const item = document.createElement('div');
-    item.className = 'dialog-gallery-item';
-    const img = document.createElement('img');
-    img.src = entry.src;
-    img.alt = entry.alt;
-    img.loading = 'lazy';
-    img.onerror = () => item.remove();
-    item.appendChild(img);
-    item.addEventListener('click', () => openLightbox(list, index));
-    dialogGallery.appendChild(item);
-  });
-}
 
 
 function updateDialogControls() {
@@ -284,9 +261,10 @@ dialogClose?.addEventListener('click', () => dialog.close());
 
 dialog?.addEventListener('click', event => {
   if (event.target === dialog) dialog.close();
-  dialog?.addEventListener('close', () => {
-  document.body.style.overflow = '';
 });
+
+dialog?.addEventListener('close', () => {
+  document.body.style.overflow = '';
 });
 
 // CHANGED: Escape now closes the lightbox first (if open), otherwise closes the popup
