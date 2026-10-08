@@ -286,29 +286,3 @@ document.addEventListener('keydown', event => {
 
 
 
-
-// ---- Hero title: fontalicious + music on hover ----
-const heroTitle = document.getElementById('hero-title');
-const fontaliciousAudio = document.getElementById('fontalicious-audio');
-
-function startfontalicious() {
-  heroTitle.classList.add('animated', 'fontalicious');
-  fontaliciousAudio.currentTime = 0;
-  fontaliciousAudio.play().catch(() => {});
-}
-
-function stopfontalicious() {
-  heroTitle.classList.remove('animated', 'fontalicious');
-  fontaliciousAudio.pause();
-  fontaliciousAudio.currentTime = 0;
-}
-
-heroTitle?.addEventListener('pointerenter', startfontalicious);
-heroTitle?.addEventListener('pointerleave', stopfontalicious);
-heroTitle?.addEventListener('pointercancel', stopfontalicious);
-
-// When the shake animation finishes, stop the audio too (even if the cursor is still there)
-heroTitle?.addEventListener('animationend', event => {
-  if (event.target !== heroTitle) return; // ignore the letter spans' own intro animations
-  stopfontalicious();
-});
