@@ -130,6 +130,13 @@ dialogLightbox?.addEventListener('click', event => {
   if (event.target === dialogLightbox) closeLightbox();
 });
 
+// Stop the video whenever the lightbox closes, however it was closed
+dialogLightbox?.addEventListener('close', () => {
+  lightboxVideo.pause();
+  lightboxVideo.removeAttribute('src');
+  lightboxVideo.load();
+});
+
 // EDIT ME: longer description shown in each project's popup.
 // The key on the left must exactly match that project's data-title
 // in index.html.
