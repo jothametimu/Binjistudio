@@ -141,12 +141,12 @@ dialogLightbox?.addEventListener('close', () => {
 // The key on the left must exactly match that project's data-title
 // in index.html.
 const projectDescriptions = {
-  'Environment Study': 'An environment study exploring form, atmosphere, lighting and spatial composition in Blender.',
-  'Portrait Study': 'A portrait painting exploring shape, expression, surface and colour through acrylic.',
-  'Motion Test': 'A short motion experiment combining animation, timing, composition and 3D graphics.',
-  'Charcoal Study': 'A charcoal portrait study focused on tone, gesture and the relationship between light and form.',
-  'Object Series': 'A Blender study focused on modelling, materials, lighting and controlled product-like presentation.',
-  'Identity Experiment': 'A graphic identity exploration built as an experimental design study.'
+  'CHAAPA LEAGUE TROPHY': 'A 3D visualization of a trophy design for the Chaapa League, a Ugandan football league. Modelled in Blender.',
+  'UCTV IDENTS': 'Short conceptual animated idents for UCTV, a catholic television network. Made in Blender and After Effects.',
+  'LUBOWA KARTING': 'A look inside the track, the kart, and the moment you step into the cockpit. Personal project. Not an official lubowa karting brand video. Made by Etimu Jotham.',
+  'PORTRAIT DRAWING': 'A series of personal and commissioned portrait drawings exploring line, tone and expression.',
+  'PAINTINGS': 'A collection of acrylic paintings exploring various themes and techniques.',
+  'KARAMOJA DAM': 'A conceptual visualization for a dam project in Karamoja, Uganda.'
 };
 
 // Builds the popup's media area by cloning whatever image or video
