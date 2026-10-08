@@ -167,48 +167,66 @@ function setDialogMedia(card) {
   dialogMedia.appendChild(clone);
 }
 
+
+
 function setDialogGallery(card) {
   if (!dialogGallery) return;
   dialogGallery.innerHTML = '';
+
   const list = (card.dataset.gallery || '')
     .split(',')
     .map(item => item.trim())
     .filter(Boolean)
-    .map(src => {
-  const [mainSrc, poster] = src.split('|').map(s => s.trim());
-  return {
-    src: mainSrc,
-    poster: poster || '',
-    alt: `${card.dataset.title} — additional view`,
-    isVideo: /\.(mp4|webm|mov)$/i.test(mainSrc)
-  };
-});
+    .map(entry => {
+      const [mainSrc, preview] = entry.split('|').map(s => s.trim());
+      return {
+        src: mainSrc,
+        preview: preview || '',
+        isVideo: /\.(mp4|webm|mov)$/i.test(mainSrc),
+        previewIsClip: /\.(mp4|webm)$/i.test(preview || ''),
+        alt: `${card.dataset.title} — additional view`
+      };
+    });
 
   list.forEach((entry, index) => {
     const item = document.createElement('div');
     item.className = 'dialog-gallery-item';
 
-
-   const media = document.createElement(entry.isVideo ? 'video' : 'img');
-media.src = entry.src;
-if (entry.isVideo) {
-  media.muted = true;
-  media.playsInline = true;
-  media.preload = 'none';           // don't fetch any video data just for the thumbnail
-  if (entry.poster) media.poster = entry.poster;
-  media.setAttribute('aria-label', entry.alt);
-} else {
-  media.alt = entry.alt;
-  media.loading = 'lazy';
-}
-media.onerror = () => item.remove();
+    let media;
+    if (entry.isVideo && entry.previewIsClip) {
+      // Short looping clip as the thumbnail; the full video only loads in the lightbox
+      media = document.createElement('video');
+      media.src = entry.preview;
+      media.muted = true;
+      media.loop = true;
+      media.autoplay = true;
+      media.playsInline = true;
+      media.preload = 'metadata';
+      media.setAttribute('aria-label', entry.alt);
+    } else if (entry.isVideo) {
+      // No preview clip: use a poster image if given
+      media = document.createElement('video');
+      media.src = entry.src;
+      media.muted = true;
+      media.playsInline = true;
+      media.preload = 'none';
+      if (entry.preview) media.poster = entry.preview;
+      media.setAttribute('aria-label', entry.alt);
+    } else {
+      media = document.createElement('img');
+      media.src = entry.src;
+      media.alt = entry.alt;
+      media.loading = 'lazy';
+    }
+    media.onerror = () => item.remove();
 
     item.appendChild(media);
     item.addEventListener('click', () => openLightbox(list, index));
     dialogGallery.appendChild(item);
+
+    if (media.tagName === 'VIDEO' && media.autoplay) media.play().catch(() => {});
   });
 }
-
 
 
 function updateDialogControls() {
