@@ -956,7 +956,7 @@ a:focus-visible {
 .modal-nav small { color: var(--muted); font-size: 15px; margin: 0; }
 
 .modal-nav-icon { flex-shrink: 0; color: var(--ink); transition: transform var(--fast) var(--ease); }
-.modal-prev:hover .modal-nav-icon { transform: translateX(3px); }
+.modal-prev:hover .modal-nav-icon { transform: translateX(-3px); }
 .modal-next:hover .modal-nav-icon { transform: translateX(3px); }/* --- Modal navigation buttons (prev/next) --- */
 
 
