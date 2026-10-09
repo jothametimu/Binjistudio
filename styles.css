@@ -247,16 +247,18 @@ a:focus-visible {
   background: #0c0c0d;
   display: grid;
   place-items: center;
-  isolation: isolate;
   animation: visual-in var(--slow) var(--ease) 90ms both;
 }
 
 .hero-visual img,
 .hero-visual video {
-  position: fixed;
-  z-index: -1;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  display: block; /* hidden until .has-media is added */
+  display: block;
+  z-index: 1;
 }
 
 .hero-visual.has-media img,
