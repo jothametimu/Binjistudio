@@ -31,7 +31,7 @@
 
 /* Fonts loaded from Google Fonts. To use a different font, swap
    the name(s) below AND update the @import line to match. */
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Schoolbell&display=swap');
 
 :root {
   /* --- Colours --- */
@@ -44,8 +44,8 @@
   /* --- Fonts ---
      Body/heading font, monospace label font, and the
      handwritten accent font used on italic words. */
-  --font-body: 'DM Sans', system-ui, sans-serif;
-  --font-mono: 'DM Mono', monospace;
+  --font-body: 'Roboto Mono', system-ui, sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
   --font-accent: 'Schoolbell', cursive;
 
   /* --- Spacing --- */
@@ -122,8 +122,9 @@ a:focus-visible {
   align-items: center;
   gap: 30px;
   padding: 5px var(--pad);
-  background: #ffffff8f;
-  backdrop-filter: blur(14px);
+   background: #ffffffd9;                          /* ~85% white */
+  backdrop-filter: blur(30px) saturate(1.2);
+  -webkit-backdrop-filter: blur(30px) saturate(1.2); /* Safari */
 }
 
 .wordmark,
@@ -163,7 +164,13 @@ a:focus-visible {
 }
 
 .wordmark { display: inline-flex; align-items: center; }
-.wordmark-logo { height: 45px; width: 90px; display: block; }
+.wordmark-logo { height: 45px; width: 195px; display: block;}
+.wordmark-logo .d {
+  fill: #dfdddd;
+  stroke: #1f1f1f;
+  stroke-width: 6;
+}
+
 
 /* ============================================================
    4. HERO SECTION (top of page, big name + intro)
@@ -174,7 +181,7 @@ a:focus-visible {
   grid-template-columns: .9fr 1.1fr;
   align-items: end;
   gap: clamp(24px, 5vw, 90px);
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 .hero-copy {
@@ -207,7 +214,6 @@ a:focus-visible {
 .hero-statement {
   max-width: 440px;
   margin: 0 0 38px;
-  font-size: clamp(17px, 1.7vw, 23px);
   line-height: 1.28;
   color: #3c3a35;
   animation: intro-fade var(--med) var(--ease) 160ms both;
@@ -589,7 +595,6 @@ a:focus-visible {
 }
 
 .feature-copy p {
-  font-size: clamp(20px, 2.3vw, 34px);
   max-width: 600px;
   margin: 0 0 48px;
 }
@@ -627,7 +632,6 @@ a:focus-visible {
 
 .about-copy {
   max-width: 600px;
-  font-size: clamp(21px, 2.5vw, 34px);
   line-height: 1.18;
 }
 

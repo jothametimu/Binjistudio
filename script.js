@@ -51,7 +51,7 @@ filters.forEach(button => {
     });
   });
 });
-
+document.querySelector('.filter[data-filter="art"]')?.click();
 // ---- Project popup (modal) ----
 const dialog = document.getElementById('project-dialog');
 const dialogTitle = document.getElementById('dialog-title');
