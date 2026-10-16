@@ -1,0 +1,11 @@
+# Binji Studio
+
+> Discover Binji Studio, a premier creative practice based in Entebbe, Uganda, dedicated to crafting visuals that speak as stills and come alive when in motion. We bridge the gap between traditional creativity and modern technology. Whether you need stunning 3D animations, detailed architectural visualization, or bespoke graphic design, our team utilizes Blender and Adobe tools to bring your vision to life. From charcoal drawings and acrylic paintings to complex 3D renders—like the featured work by Etimu Jotham—we use different mediums to test ideas and deliver exceptional results. Elevate your brand with Binji Studio’s versatile visual solutions.
+
+## Work
+- [Chaapa League Trophy](https://binjistudio.pages.dev/#work): 3D trophy modelled in Blender
+- [UCTV Idents](https://binjistudio.pages.dev/#work): short animated idents for a television network
+- [Lubowa Karting](https://binjistudio.pages.dev/#work): 3D animation of a karting track (personal project)
+
+## Contact
+- [Contact](https://binjistudio.pages.dev/#contact): project enquiries

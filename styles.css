@@ -29,9 +29,6 @@
    Change fonts and colours here — it updates the whole site.
    ============================================================ */
 
-/* Fonts loaded from Google Fonts. To use a different font, swap
-   the name(s) below AND update the @import line to match. */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Schoolbell&display=swap');
 
 :root {
   /* --- Colours --- */
@@ -493,7 +490,7 @@ a:focus-visible {
   padding: 12px 0 28px;
 }
 
-.work-info h3 {
+.work-info h2 {
   font-size: 15px;
   margin: 0;
   font-weight: 500;
