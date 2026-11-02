@@ -25,7 +25,7 @@ menuToggle?.addEventListener('click', () => {
   const open = mobileNav.classList.toggle('open');
   menuToggle.setAttribute('aria-expanded', String(open));
 });
-mobileNav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+mobileNav?.querySelectorAll('a, button').forEach(link => link.addEventListener('click', () => {
   mobileNav.classList.remove('open');
   menuToggle?.setAttribute('aria-expanded', 'false');
 }));
@@ -309,5 +309,29 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Escape') dialog.close();
 });
 
+// ---- About / Contact popups ----
+document.addEventListener('click', event => {
+  const btn = event.target.closest('[data-open]');
+  if (!btn) return;
+  event.preventDefault();
 
+  const d = document.getElementById(btn.dataset.open);
+  if (!d) {
+    console.warn('No dialog found with id:', btn.dataset.open);
+    return;
+  }
+  if (!d.open) {
+    d.showModal();
+    document.body.style.overflow = 'hidden';
+  }
+});
 
+document.querySelectorAll('.info-dialog').forEach(d => {
+  if (dialogClose && !d.querySelector('.dialog-close')) {
+    const closeBtn = dialogClose.cloneNode(true);
+    closeBtn.addEventListener('click', () => d.close());
+    d.prepend(closeBtn);
+  }
+  d.addEventListener('click', e => { if (e.target === d) d.close(); });
+  d.addEventListener('close', () => { document.body.style.overflow = ''; });
+});

@@ -32,11 +32,12 @@
 
 :root {
   /* --- Colours --- */
-  --paper: #f7f4ec;           /* lighter background (popups) */
+  --paper: #fff7d0;           /* lighter background (popups) */
   --ink: #29241f;             /* main text colour */
   --muted: #6e6b62;           /* secondary/grey text */
   --line: #c9c5bb;            /* thin border lines */
-  --dark: #161514;            /* dark section background */
+  --dark: #2b2a2a;            /* dark section background */
+  --bg: #fff7d0;              /* main page background */
 
   /* --- Fonts ---
      Body/heading font, monospace label font, and the
@@ -102,7 +103,7 @@ a:focus-visible {
 
 /* shared section padding, used by most <section> tags */
 .section-pad {
-  padding: clamp(50px, -11vw, 160px) var(--pad);
+  padding: clamp(17px, -11vw, 160px) var(--pad);
 }
 
 
@@ -119,9 +120,8 @@ a:focus-visible {
   align-items: center;
   gap: 30px;
   padding: 5px var(--pad);
-   background: #ffffffd9;                          /* ~85% white */
-  backdrop-filter: blur(30px) saturate(1.2);
-  -webkit-backdrop-filter: blur(30px) saturate(1.2); /* Safari */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px); /* Safari */
 }
 
 .wordmark,
@@ -134,9 +134,6 @@ a:focus-visible {
   font-size: 15px;
 }
 
-.wordmark {
-  font-weight: 500;
-}
 
 .site-header nav {
   display: flex;
@@ -174,15 +171,13 @@ a:focus-visible {
    ============================================================ */
 
 .hero {
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  align-items: end;
-  gap: clamp(24px, 5vw, 90px);
-  padding-top: 100px;
+  display: block;                 /* drop the 2-column grid */
+  padding-top: 8px;              /* lines the first text line up with the logo */
 }
 
 .hero-copy {
-  padding-bottom: clamp(10px, 4vw, 45px);
+padding: 0;
+  margin-left: clamp(90px, 11vw, 170px);   /* how far the text sits from the logo */
 }
 
 .eyebrow {
@@ -209,11 +204,14 @@ a:focus-visible {
 }
 
 .hero-statement {
-  max-width: 440px;
-  margin: 0 0 38px;
-  line-height: 1.28;
-  color: #3c3a35;
-  animation: intro-fade var(--med) var(--ease) 160ms both;
+   position: relative;
+  z-index: 21;                    /* keeps text above the header's blur */
+  max-width: 640px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: -.03em;
+  color: var(--ink);
 }
 
 .hero-meta {
@@ -540,7 +538,7 @@ a:focus-visible {
    ============================================================ */
 
 .feature-dark {
-  background: var(--dark);
+  background: var(--bg);
   color: #fff;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1035,6 +1033,18 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    padding-top: 80px;
+  }
+  .hero-copy { margin-left: 0; }
+  .hero-statement {
+    max-width: none;
+    font-size: 17px;
+    line-height: 1.3;
+    letter-spacing: -.02em;
+    z-index: 0;
+  }
+
   .hero-visual { min-height: 54vh; }
 
   .work-card,
@@ -1053,7 +1063,7 @@ a:focus-visible {
     left: 0;
     right: 0;
     z-index: 19;
-    background: #ffffff;
+    background: #fff7d0;
     padding: 18px var(--pad);
     border-bottom: 1px solid var(--line);
     display: none;
@@ -1062,18 +1072,19 @@ a:focus-visible {
     font-family: var(--font-mono);
     font-size: 15px;
     letter-spacing: .1em;
-    font-weight: 200;
+    font-weight: 500;
+    
+
   }
 
   .mobile-nav.open { display: flex; }
-  .filter-row { margin-top: 25px; }
 
 }
 
 
 @media (max-width: 600px) {
   .hero h1 { font-size: 22vw; }
-  .hero { min-height: auto; padding-top: 100px; }
+  .hero { min-height: auto; padding-top: 80px; }
   .hero-visual { min-height: 48vh; }
 
   .work-card,
@@ -1102,7 +1113,7 @@ a:focus-visible {
     font-size: 18vw;
   }
 
-  .filter-row { border-radius: 22px; margin-top: 65px; }
+  .filter-row { border-radius: 22px; }
   .filter { flex: 0 0 auto; }
   .dialog-media { min-height: 300px; height: 46vh; }
   .dialog-controls { margin-top: 24px; }
@@ -1116,4 +1127,79 @@ a:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: .001ms !important;
   }
+}
+
+@media (max-width: 900px) {
+  .mobile-nav {
+    align-items: center;
+    text-align: center;
+  }
+  .mobile-nav a,
+  .mobile-nav button {
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   ABOUT / CONTACT POPUPS
+   (reuse .project-dialog for the open/close animation)
+   ============================================================ */
+
+/* header + mobile nav buttons look identical to the links */
+.site-header nav button,
+.mobile-nav button {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: .08em;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  transition: opacity var(--fast) ease;
+}
+.mobile-nav button { letter-spacing: .1em; font-weight: 500; }
+.site-header nav button:hover { opacity: .5; }
+
+.info-dialog { width: min(900px, 94vw); max-height: 90vh; }
+.info-body { padding: clamp(24px, 4vw, 48px); }
+.info-body .eyebrow { margin-bottom: 24px; }
+
+.info-dialog h2 {
+  font-size: clamp(40px, 45px, 88px);
+  line-height: .85;
+  letter-spacing: -2px;
+  margin: 0 0 28px;
+}
+.info-dialog h2 em {
+  font-family: var(--font-accent);
+  font-style: normal;
+  letter-spacing: 1px;
+}
+
+/* about layout */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: start;
+}
+.info-grid img {
+  width: 100%;
+  aspect-ratio: 6 / 5;
+  object-fit: cover;
+  display: block;
+}
+.info-dialog .about-copy { line-height: 1.4; }
+
+/* contact layout */
+.info-dialog .email-link {
+  margin-top: 20px;
+  font-size: clamp(18px, 3.2vw, 40px);
+  overflow-wrap: anywhere;
+}
+.info-dialog .socials { margin-top: 32px; }
+
+@media (max-width: 700px) {
+  .info-grid { grid-template-columns: 1fr; }
+  .info-dialog h2 { font-size: 15vw; }
+  .info-dialog .email-link { font-size: 5vw; }
 }
