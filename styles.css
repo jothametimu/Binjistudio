@@ -865,17 +865,43 @@ padding: 0;
 .project-dialog::-webkit-scrollbar {
   display: none; /* Chrome / Safari / Edge */
 }
-.dialog-lightbox { position: relative; border: 0; padding: 0; margin: auto; max-width: 92vw; max-height: 92vh; overflow: hidden; background: transparent; }
+.dialog-lightbox {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;            /* accounts for mobile browser bars */
+  max-width: none;
+  max-height: none;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+.dialog-lightbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .dialog-lightbox::backdrop { background: rgba(10,10,10,.85); backdrop-filter: blur(6px); }
 
 .dialog-lightbox img,
 .dialog-lightbox video {
   display: block;
   max-width: 92vw;
-  max-height: 92vh;
+  max-height: 86vh;
+  max-height: 86dvh;
   width: auto;
   height: auto;
   object-fit: contain;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
 }
 
 
