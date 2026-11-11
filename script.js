@@ -57,7 +57,6 @@ const dialog = document.getElementById('project-dialog');
 const dialogTitle = document.getElementById('dialog-title');
 const dialogType = document.getElementById('dialog-type');
 const dialogYear = document.getElementById('dialog-year');
-const dialogMedia = document.getElementById('dialog-media');
 const dialogDescription = document.getElementById('dialog-description');
 const dialogClose = document.querySelector('.dialog-close');
 const dialogPrev = document.getElementById('dialog-prev');
@@ -152,27 +151,6 @@ const projectDescriptions = {
 // Builds the popup's media area by cloning whatever image or video
 // is already inside the clicked card — so you never have to list
 // your filenames twice.
-function setDialogMedia(card) {
-  const sourceMedia = card?.querySelector('.media-box img, .media-box video');
-  dialogMedia.innerHTML = '';
-
-  if (!sourceMedia) {
-    dialogMedia.innerHTML = '<div class="dialog-placeholder">ADD AN IMAGE OR VIDEO TO THIS PROJECT CARD IN index.html</div>';
-    return;
-  }
-
-  const clone = sourceMedia.cloneNode(true);
-  clone.removeAttribute('loop');
-  clone.removeAttribute('autoplay');
-  clone.removeAttribute('muted');
-  if (clone.tagName === 'VIDEO') {
-    clone.controls = true;
-    clone.setAttribute('aria-label', `${card.dataset.title} video`);
-  } else {
-    clone.alt = `${card.dataset.title} — ${card.dataset.type}`;
-  }
-  dialogMedia.appendChild(clone);
-}
 
 
 
@@ -253,10 +231,7 @@ function updateDialogControls() {
 function openProject(card) {
   currentProject = Number(card.dataset.index);
   dialogTitle.textContent = card.dataset.title || '';
-  dialogType.textContent = card.dataset.type || '';
-  dialogYear.textContent = card.dataset.year || '';
   dialogDescription.textContent = projectDescriptions[card.dataset.title] || 'Project details can be added here: role, tools, process and outcome.';
-  setDialogMedia(card);
   setDialogGallery(card);
   updateDialogControls();
 if (!dialog.open) {

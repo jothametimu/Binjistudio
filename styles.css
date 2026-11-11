@@ -830,7 +830,7 @@ padding: 0;
 }
 
 .dialog-body h2 {
-  font-size: clamp(42px, 6vw, 78px);
+  font-size: 36px;
   line-height: .9;
   margin: 0 0 10px;
   letter-spacing: -.055em;
